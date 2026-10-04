@@ -67,7 +67,7 @@ plot(mod3Fam)
 
 #Each one-unit increase in maximum clutch size was associated with approximately 26% lower odds of being threatened (OR ≈ 0.74).
 
-# So, if Family was specified a priori because you wanted to account for taxonomic non-independence, I'd lean toward reporting the GLMM as the primary model, with the ordinary GLM as a sensitivity comparison. The fact that both give essentially the same effect size is useful supporting evidence.
+# So, if Family was specified a priori because you wanted to account for taxonomic non-independence, lean toward reporting the GLMM as the primary model, with the ordinary GLM as a sensitivity comparison. The fact that both give essentially the same effect size is useful supporting evidence.
 
 
 #TESTING TO SEE IF FAMILY IS A WORTHY THING TO INCLUDE OR NOT DESPITE THE SMOL DIFFERENCE
@@ -75,7 +75,8 @@ plot(mod3Fam)
 #False: the model isn't showing evidence that the random-effect structure is too complex for the data.
 isSingular(mod2Fam)
 
-#How many families only contain 1 species. A random effect cannot learn much within-family clustering from singleton families.
+#How many families only contain 1 species. A random effect cannot learn much within-family clustering from families with only 1 species! 
 table(df2$`Family HBW/BirdLife v9.1 (2024)`)
+#OK we only have 5 families with 1 species, so we are gud. We have 20ish families total.
 
 #Lean toward using GLMM as the main model bc family should be factored.
